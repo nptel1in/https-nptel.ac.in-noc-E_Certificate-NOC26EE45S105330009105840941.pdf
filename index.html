@@ -1,51 +1,36 @@
-```html id="n4l9qd"
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PDF Viewer</title>
+
+<title>
+NOC26EE45S105330009105840941.pdf
+</title>
 
 <style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
-}
-
 body{
-    background:#f1f3f4;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    margin:0;
+    background:#2b2b2b;
+    font-family:Arial;
 }
 
-.upload-box{
-    background:white;
-    padding:40px;
-    border-radius:15px;
-    text-align:center;
-    width:350px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.15);
-}
-
-.upload-box h2{
-    margin-bottom:20px;
-    color:#202124;
-}
-
-.btn{
-    margin-top:20px;
-    padding:12px 25px;
-    border:none;
-    background:#1a73e8;
+.topbar{
+    height:60px;
+    background:#323639;
     color:white;
-    border-radius:8px;
-    cursor:pointer;
+    display:flex;
+    align-items:center;
+    padding-left:20px;
     font-size:16px;
+    font-weight:bold;
+}
+
+iframe{
+    width:100%;
+    height:calc(100vh - 60px);
+    border:none;
 }
 
 </style>
@@ -53,52 +38,12 @@ body{
 
 <body>
 
-<div class="upload-box">
-
-    <h2>Upload PDF File</h2>
-
-    <input type="file" id="pdfFile" accept="application/pdf">
-
-    <br>
-
-    <button class="btn" onclick="openPDF()">
-        Open PDF
-    </button>
-
+<div class="topbar">
+NOC26EE45S105330009105840941.pdf
 </div>
 
-<script>
-
-function openPDF(){
-
-    const fileInput = document.getElementById('pdfFile');
-
-    if(!fileInput.files.length){
-        alert('Please upload PDF');
-        return;
-    }
-
-    const file = fileInput.files[0];
-
-    const fileURL = URL.createObjectURL(file);
-
-    const newWindow = window.open(fileURL, '_blank');
-
-    setTimeout(() => {
-
-        try{
-
-            newWindow.document.title =
-            "NOC26EE45S105330009105840941.pdf";
-
-        }catch(e){}
-
-    },1000);
-
-}
-
-</script>
+<iframe src="NOC26EE45S105330009105840941.pdf">
+</iframe>
 
 </body>
 </html>
-```
